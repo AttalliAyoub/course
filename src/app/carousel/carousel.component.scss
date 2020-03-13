@@ -1,0 +1,21 @@
+#carousel {
+    // padding: 0 20%;
+    margin: 10px auto;
+    position: relative;
+    img {
+        width: 55%;
+        margin: 0 20px;
+        height: 100%;
+    }
+    h1 {
+        top: 50%;
+        right: 20px;
+        font-size: 5vw;
+        position: absolute;
+        font-family: HacenTunisia;
+        color: #b079ee;
+        // background: linear-gradient(to right, #6948ef , #b079ee);
+        // background-clip: text;
+        // -webkit-text-fill-color: transparent;
+    }
+}
