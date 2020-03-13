@@ -1,0 +1,11 @@
+.showelement {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    color: coral;
+    img {
+        height: 100%;
+        position: absolute;
+        right: 20px;
+    }
+}

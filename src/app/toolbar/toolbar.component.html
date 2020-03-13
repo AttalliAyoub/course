@@ -1,15 +1,30 @@
 <mat-toolbar id="toolbar" color="primary">
   <span>Mobarmig</span>
   <div class="divider"></div>
+
+
+
+
+
+
   <button mat-fab aria-label="Example icon-button with a heart icon">
     <mat-icon>person</mat-icon>
   </button>
   <mat-select value="ar">
     <mat-option value="ar">
-      <mat-icon>language</mat-icon>
-      Arabic
+      <div class="abjad-arabic abjad-arabic-primary mdi mdi-abjad-arabic" role="alert">
+        Ar
+      </div>
     </mat-option>
-    <mat-option value="fr">franch</mat-option>
-    <mat-option value="en">english</mat-option>
+    <mat-option value="fr">
+      <div class="alphabetical alphabetical-primary mdi mdi-alphabetical">
+        fr
+      </div>
+    </mat-option>
+    <mat-option value="en">
+      <div class="alphabetical alphabetical-primary mdi mdi-alphabetical">
+        En
+      </div>
+    </mat-option>
   </mat-select>
 </mat-toolbar>

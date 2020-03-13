@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CarouselComponent } from './carousel/carousel.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ShowElementComponent } from './show-element/show-element.component';
 // material modules end
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     PageNotFoundComponentComponent,
     ToolbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    ShowElementComponent
   ],
   imports: [
     BrowserModule,
