@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CarouselComponent } from './carousel/carousel.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ShowElementComponent } from './show-element/show-element.component';
+import { MatCardModule } from '@angular/material/card';
 // material modules end
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ShowElementComponent } from './show-element/show-element.component';
     PageNotFoundComponentComponent,
     ToolbarComponent,
     CarouselComponent,
-    ShowElementComponent
+    ShowElementComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { ShowElementComponent } from './show-element/show-element.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
     // material modules end
   ],
   providers: [],
