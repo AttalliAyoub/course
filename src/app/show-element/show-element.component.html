@@ -1,4 +1,31 @@
-<div class="showelement">
-    <img [src]="imageURI">
-    <h1> {{ slogo }} </h1>
+<div class="showelement" [style.margin-top]="TopMarggin + 'px'" [style.margin-bottom]="ButtomMarggin + 'px'">
+    <!--     [ngStyle]="{ 'left': 'calc(100% - ' + size + 'px)' }"  -->
+    <div class="slogo" [ngStyle]="{ 'left': Dir ? '0' : null, 'right': Dir ? null : '0' }" (mouseenter)="over($event)"
+        (mouseover)="over($event)" (mouseleave)="leave($event)">
+        <h1> {{ slogo }} </h1>
+        <h2> {{ subslogo }} </h2>
+        <button mat-raised-button>سجل الآن</button>
+        <button mat-raised-button>
+            المزيد
+            <mat-icon>play_circle_outline</mat-icon>
+        </button>
+    </div>
+    <img *ngIf="!matches" [ngStyle]="{ 'left': Dir ? null : '0', 'right': Dir ? '0' : null }" [src]="imageURI">
+    <div #background class="background"
+        [ngStyle]="{ 'transform': matches ? 'skewX(0deg)' : (Dir ? 'skewX(20deg)' : 'skewX(-20deg)'), 'right': Dir ? ( matches ? '0%' : '50%') : null, 'left': Dir ? null : ( matches ? '0%' : '50%'), 'background-image': Dir ? 'linear-gradient(to right, #6948ef, #b079ee)' : 'linear-gradient(to right, #b079ee, #6948ef)' }"
+        (mouseenter)="over($event)" (mouseover)="over($event)" (mouseleave)="leave($event)">
+    </div>
+    <div #background0 class="background0"
+        [ngStyle]="{ 'transform': matches ? 'skewX(0deg)' : (Dir ? 'skewX(20deg)' : 'skewX(-20deg)'), 'right': Dir ? ( matches ? '0%' : '50%') : null, 'left': Dir ? null : ( matches ? '0%' : '50%'), 'background-image': Dir ? 'linear-gradient(to right, #b079ee, #6948ef)' : 'linear-gradient(to right, #6948ef, #b079ee)' }"
+        (mouseenter)="over($event)" (mouseover)="over($event)" (mouseleave)="leave($event)">
+    </div>
+
 </div>
+
+<img 
+    *ngIf="matches"
+    [align]="Dir ? 'right' : 'left'"
+    [src]="imageURI">
+
+    <!-- 
+    [ngStyle]="{ 'left': Dir ? null : '0', 'right': Dir ? '0' : null }" -->

@@ -10,40 +10,41 @@
     margin: 0 1.8%;
   }
   #slogo1 {
+    & > * {
+      font-family: HacenTunisia;
+      direction: rtl;
+    }
     color: red;
     vertical-align: middle;
     width: 50%;
     display: inline-block;
     margin: 0 1.8%;
-    direction: rtl;
     // height: 200px;
     h1 {
       // background: #673ab7;
       line-height: normal;
       font-size: 3.4vw;
-      font-family: HacenTunisia;
       color: #b079ee;
     }
     h2 {
       // background: #673ab7;
       line-height: normal;
       font-size: 2vw;
-      font-family: HacenTunisia;
       color: #a7a7a7;
     }
     button {
       // background: #673ab7;
-      font-family: HacenTunisia;
       background-image: linear-gradient(to right, #6948ef, #b079ee);
       color: white;
       line-height: normal;
       font-size: 2vw;
+      border-radius: 10vw;
       // color: #a7a7a7;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 855px) {
   #carousel {
     img {
       width: 80%;

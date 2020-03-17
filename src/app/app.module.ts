@@ -15,6 +15,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ShowElementComponent } from './show-element/show-element.component';
 import { MatCardModule } from '@angular/material/card';
+import { LayoutModule } from '@angular/cdk/layout';
 // material modules end
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    LayoutModule,
     // material modules end
   ],
   providers: [],
