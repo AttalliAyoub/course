@@ -27,4 +27,13 @@
       </div>
     </mat-option>
   </mat-select>
+
+
+  <button mat-mini-fab color="accent" class="themeSwitcher" (click)="switchTemem()">
+
+    <mat-icon *ngIf="(resp.isDark | async)">wb_sunny</mat-icon>
+    <mat-icon *ngIf="!(resp.isDark | async)">nights_stay</mat-icon>
+
+  </button>
+
 </mat-toolbar>

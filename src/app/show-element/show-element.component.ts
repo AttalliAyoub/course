@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input, ElementRef, ViewChild } from '@angular/core';
-import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { RespService } from '../services/resp/resp.service';
 
 
 const print = console.log;
@@ -21,9 +21,8 @@ export class ShowElementComponent implements OnInit, OnDestroy {
   @ViewChild('background') background: ElementRef<HTMLDivElement>;
   @ViewChild('background0') background0: ElementRef<HTMLDivElement>;
 
-  breakpoint: Observable<BreakpointState>;
   breakpointSub: Subscription;
-  matches: boolean = this.breakpointObserver.isMatched('(max-width: 855px)');
+  matches: boolean = this.resp.breakpointObserver.isMatched('(max-width: 855px)');
 
   over(event: MouseEvent) {
     const element = this.background.nativeElement;
@@ -47,18 +46,19 @@ export class ShowElementComponent implements OnInit, OnDestroy {
     element0.style.opacity = '0';
   }
 
-  constructor(public breakpointObserver: BreakpointObserver) {
-    this.breakpoint = breakpointObserver.observe('(max-width: 855px)');
+  constructor(public resp: RespService) {
+    this.breakpointSub = resp.breakpoint.subscribe(breakpointState => {
+      this.matches = breakpointState.matches;
+    });
   }
+
   ngOnDestroy(): void {
     this.breakpointSub.unsubscribe();
     print('distroy');
   }
 
   ngOnInit(): void {
-    this.breakpointSub = this.breakpoint.subscribe(breakpointState => {
-      this.matches = breakpointState.matches;
-    });
+
   }
 
 

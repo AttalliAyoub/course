@@ -17,6 +17,16 @@ import { ShowElementComponent } from './show-element/show-element.component';
 import { MatCardModule } from '@angular/material/card';
 import { LayoutModule } from '@angular/cdk/layout';
 // material modules end
+
+// firebase lib
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+// firebase lib end
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +48,13 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatCardModule,
     LayoutModule,
     // material modules end
+    // firebase lib
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    // AngularFireStorageModule,
+    AngularFireAuthModule,
+    // firebase lib end
+
   ],
   providers: [],
   bootstrap: [AppComponent]
