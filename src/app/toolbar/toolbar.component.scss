@@ -1,4 +1,10 @@
 #toolbar {
+  #Title {
+    font-weight: bold;
+    font-size: 3vw;
+    color: white;
+    text-decoration: none;
+  }
   mat-select {
     width: 70px;
     margin: 0 20px;
@@ -6,7 +12,15 @@
   .divider {
     width: 100%;
   }
-  .themeSwitcher {
-    color: white;
+  #login {
+    // background-color: red;
+    font-weight: bold;
+    & > * {
+      display: inline-block;
+    }
+
+    .space {
+      width: 20px;
+    }
   }
 }

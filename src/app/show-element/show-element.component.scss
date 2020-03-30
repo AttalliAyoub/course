@@ -1,8 +1,5 @@
 .showelement {
-  & > * {
-    font-family: HacenTunisia;
-    direction: rtl;
-  }
+
   height: 334px;
   //   display: flex;
   //   flex-direction: row;
@@ -65,10 +62,6 @@
     // display: inline-block;
     z-index: 2;
     // margin: 20px;
-    & > * {
-      font-family: HacenTunisia;
-      direction: rtl;
-    }
     h1 {
       line-height: normal;
       font-size: 3.4vw;

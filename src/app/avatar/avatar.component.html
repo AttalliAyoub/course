@@ -1,0 +1,20 @@
+<button
+    [style.height.px]="radius * 2"
+    [style.width.px]="radius * 2"
+    [style.border-radius.px]="radius"
+    class="avatar"
+    matRipple>
+
+    <img
+    *ngIf="url else noImage"
+    [style.height.px]="radius * 2"
+    [style.width.px]="radius * 2"
+    [src]="url" >
+
+
+    <ng-template #noImage>
+        <mat-icon>cloud_upload</mat-icon>
+    </ng-template>
+    
+
+</button>

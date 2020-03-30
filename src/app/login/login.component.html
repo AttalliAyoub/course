@@ -1,0 +1,44 @@
+<div id="profile" *ngIf="resp.localLoad | async as locale" >
+    <ng-template #login>
+        <ngx-auth-firebaseui
+        [tabindex]="index"
+        [guestEnabled]='false'
+        [providers]="[providers.Google, providers.EmailAndPassword, providers.Facebook, providers.PhoneNumber]"
+        appearance="fill"
+
+        [signInTabText]="locale.ngxauthfirebaseui.signInTabText"
+        [signInCardTitleText]="locale.ngxauthfirebaseui.signInCardTitleText"
+        [loginButtonText]="locale.ngxauthfirebaseui.loginButtonText"
+        [forgotPasswordButtonText]="locale.ngxauthfirebaseui.forgotPasswordButtonText"
+        [nameText]="locale.ngxauthfirebaseui.nameText"
+        [nameErrorRequiredText]="locale.ngxauthfirebaseui.nameErrorRequiredText"
+        [nameErrorMinLengthText]="locale.ngxauthfirebaseui.nameErrorMinLengthText"
+        [nameErrorMaxLengthText]="locale.ngxauthfirebaseui.nameErrorMaxLengthText"
+        [emailText]="locale.ngxauthfirebaseui.emailText"
+        [emailErrorRequiredText]="locale.ngxauthfirebaseui.emailErrorRequiredText"
+        [emailErrorPatternText]="locale.ngxauthfirebaseui.emailErrorPatternText"
+        [passwordText]="locale.ngxauthfirebaseui.passwordText"
+        [passwordErrorRequiredText]="locale.ngxauthfirebaseui.passwordErrorRequiredText"
+        [registerTabText]="locale.ngxauthfirebaseui.registerTabText"
+        [registerCardTitleText]="locale.ngxauthfirebaseui.registerCardTitleText"
+        [registerButtonText]="locale.ngxauthfirebaseui.registerButtonText"
+        [guestButtonText]="locale.ngxauthfirebaseui.guestButtonText"
+        [resetPasswordTabText]="locale.ngxauthfirebaseui.resetPasswordTabText"
+        [resetPasswordInputText]="locale.ngxauthfirebaseui.resetPasswordInputText"
+        [resetPasswordErrorRequiredText]="locale.ngxauthfirebaseui.resetPasswordErrorRequiredText"
+        [resetPasswordErrorPatternText]="locale.ngxauthfirebaseui.resetPasswordErrorPatternText"
+        [resetPasswordActionButtonText]="locale.ngxauthfirebaseui.resetPasswordActionButtonText"
+        [resetPasswordInstructionsText]="locale.ngxauthfirebaseui.resetPasswordInstructionsText"
+        [emailConfirmationTitle]="locale.ngxauthfirebaseui.emailConfirmationTitle"
+        [emailConfirmationText]="locale.ngxauthfirebaseui.emailConfirmationText"
+
+
+        
+        >
+        </ngx-auth-firebaseui>
+    </ng-template>
+
+
+    <app-profile *ngIf="auth.userObservable | async as user; else login" [user]="user"  ></app-profile>
+
+</div>

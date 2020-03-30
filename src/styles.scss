@@ -2,13 +2,18 @@
   font-family: HacenTunisia;
   src: url("assets/Hacen-Tunisia.ttf") format("opentype");
 }
+
+@font-face {
+  font-family: BarlowCondensed;
+  src: url("assets/BarlowCondensed-ExtraBold.ttf") format("opentype");
+}
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: HacenTunisia; //, "Helvetica Neue", sans-serif;
 }
 
 @import '~@angular/material/theming';
@@ -19,6 +24,39 @@ $dark-warn:         mat-palette($mat-deep-orange);
 // themes varialbes
 $candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent, $dark-warn);
 $dark-theme:        mat-dark-theme($candy-app-primary, $candy-app-accent, $dark-warn);
+
+
+// font-famliy
+$ar-font: mat-typography-config(
+  $font-family: HacenTunisia,
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+$en-font: mat-typography-config(
+  $font-family: BarlowCondensed,
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+.ar {
+  @include mat-base-typography($ar-font);
+  @include mat-checkbox-typography($ar-font);
+  @include angular-material-typography($ar-font);
+  @include mat-core($ar-font);
+  font-family: HacenTunisia;
+}
+
+.en {
+  @include mat-base-typography($en-font);
+  @include mat-checkbox-typography($en-font);
+  @include angular-material-typography($en-font);
+  @include mat-core($en-font);
+  font-family: BarlowCondensed;
+
+}
+
+
 @include angular-material-theme($candy-app-theme);
 .dark-theme {
   @include angular-material-theme($dark-theme);

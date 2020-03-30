@@ -1,6 +1,13 @@
-<div [class.dark-theme]="resp.isDark | async">
+<div
+    *ngIf="resp.locale | async as locale"
+    [dir]="locale == 'ar' ? 'rtl' : 'ltr'"
+    [class.dark-theme]="resp.isDark | async"
+    [class.ar]="locale == 'ar'"
+    [class.en]="locale != 'ar'"
+    >
     <mat-card id="card" >
         <app-toolbar></app-toolbar>
         <router-outlet></router-outlet>
     </mat-card>
 </div>
+

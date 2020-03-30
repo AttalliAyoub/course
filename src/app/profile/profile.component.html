@@ -1,0 +1,52 @@
+<mat-card class="profile">
+    <app-avatar [url]='user.photoURL' [radius]='50'></app-avatar>
+    <div class="space"></div>
+    <mat-icon *ngIf="user.emailVerified">verified_user</mat-icon>
+    <div class="space"></div>
+    <button mat-raised-button [color]="form.disabled ? 'primary' : 'warn'" (click)="edit()">
+        <mat-icon *ngIf="form.disabled else cancel">edit</mat-icon>
+        <ng-template #cancel>
+            <mat-icon>cancel</mat-icon>
+        </ng-template>
+        {{ form.disabled ? 'Edit' : 'Cancel' }}
+    </button>
+
+    <div class="space"></div>
+
+    <form [formGroup]="form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-hint align="end" *ngIf="!form.disabled" >{{ name.value?.length || 0 }}/50</mat-hint>
+            <mat-hint align="start" *ngIf="!form.disabled" >Hint</mat-hint>
+            <input matInput #name formControlName="name" maxlength="50" placeholder="Name" required>
+        </mat-form-field>
+
+        <div class="space"></div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-hint align="start" *ngIf="!form.disabled" >Hint</mat-hint>
+            <input matInput formControlName="email" placeholder="Email" required>
+        </mat-form-field>
+
+        <div class="space"></div>
+
+        <button mat-raised-button *ngIf="form.disabled else save" color="primary" (click)="signOut()">
+            <mat-icon>exit_to_app</mat-icon>
+            Sign Out
+        </button>
+
+        <ng-template #save>
+            <button mat-raised-button color="primary" (click)="updateUser()">
+                <mat-icon>save</mat-icon>
+                Save
+            </button>
+        </ng-template>
+
+    </form>
+
+
+</mat-card>

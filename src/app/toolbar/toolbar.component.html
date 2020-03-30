@@ -1,16 +1,88 @@
 <mat-toolbar id="toolbar" color="primary">
-  <span>Mobarmig</span>
+  <a id="Title" routerLink="/">Mobarmig</a>
   <div class="divider"></div>
 
 
 
 
+  <div id='login' *ngIf="resp.localLoad | async as locale">
+
+    <app-avatar *ngIf="auth.userObservable | async as user else login" [matMenuTriggerFor]="appMenu"
+      [url]='user.photoURL' [radius]='25'></app-avatar>
+
+    <mat-menu #appMenu="matMenu">
+
+      <div *ngIf="auth.userObservable | async as user">
+
+        <div mat-menu-item>
+          <strong> {{ user.displayName }} </strong>
+        </div>
+
+        <div mat-menu-item>
+          <span> {{ user.email }} </span>
+        </div>
+
+      </div>
+
+      <div mat-menu-item>
+        <mat-slide-toggle style="height: inherit; width: 100%;" [checked]='resp.isDark | async'
+          (change)='change($event)'>
+          <div style="    display: flex;
+          flex-direction: row;
+          width: 120px;
+          justify-content: space-between;">
+            Theme
+            <mat-icon *ngIf="resp.isDark | async else other">wb_sunny</mat-icon>
+            <ng-template #other>
+              <mat-icon>nights_stay</mat-icon>
+            </ng-template>
+          </div>
+        </mat-slide-toggle>
+      </div>
+
+      <button *ngIf="!router.url.includes('auth')" mat-menu-item color='primary' (click)="goProfile()">
+        <mat-icon>person</mat-icon>
+        Profile
+      </button>
+
+      <button mat-menu-item color='warn' (click)="signOut()">
+        <mat-icon>exit_to_app</mat-icon>
+        Sign Out
+      </button>
+    </mat-menu>
 
 
-  <button mat-fab aria-label="Example icon-button with a heart icon">
-    <mat-icon>person</mat-icon>
-  </button>
-  <mat-select value="ar">
+    <!-- <mat-menu #menu="matMenu">
+      <div *ngIf="auth.userObservable | async as user" >
+        <strong> {{ user.displayName }} </strong>
+        <em> {{ user.email }} </em>
+      </div><br>
+      <button mat-raised-button>
+        <mat-icon>person</mat-icon>
+        Profile
+      </button><br>
+      <button mat-raised-button>
+        <mat-icon>app_exit</mat-icon>
+        Sign Out
+      </button>
+    </mat-menu> -->
+
+    <!-- <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar> -->
+
+
+
+    <ng-template #login>
+      <button mat-stroked-button *ngIf="!router.url.includes('login')" [routerLink]="['/auth', 0]"
+        routerLinkActive="active">{{locale.ngxauthfirebaseui.signInTabText}}</button>
+      <div class="space"></div>
+      <button mat-raised-button *ngIf="!router.url.includes('login')" [routerLink]="['/auth', 1]"
+        routerLinkActive="active">{{locale.ngxauthfirebaseui.registerTabText}}</button>
+    </ng-template>
+  </div>
+
+
+
+  <mat-select value="ar" [value]='resp.locale | async' (selectionChange)='selectionChange($event)'>
     <mat-option value="ar">
       <div class="abjad-arabic abjad-arabic-primary mdi mdi-abjad-arabic" role="alert">
         Ar
@@ -27,13 +99,5 @@
       </div>
     </mat-option>
   </mat-select>
-
-
-  <button mat-mini-fab color="accent" class="themeSwitcher" (click)="switchTemem()">
-
-    <mat-icon *ngIf="(resp.isDark | async)">wb_sunny</mat-icon>
-    <mat-icon *ngIf="!(resp.isDark | async)">nights_stay</mat-icon>
-
-  </button>
 
 </mat-toolbar>

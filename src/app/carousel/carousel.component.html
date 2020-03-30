@@ -1,11 +1,16 @@
 <div id="carousel">
     <img src="assets/carousel.png">
     <!-- <mat-card id="slogo1"> -->
-    <div id="slogo1">
-        <h1>تعلم البرمجة بأفضل طريقة ممكنة</h1>
-        <h2>تعلم البرمجة بأفضل طريقة ممكنة</h2>
+    <div    
+        id="slogo1"
+        *ngIf="resp.localLoad | async as locale" >
+        <h1>{{ locale.home.carousel.slogo }}</h1>
+        <h2>{{ locale.home.carousel.subslogo }}</h2>
         <!-- color="primary" -->
-        <button mat-raised-button>سجل الآن</button>
+        <button mat-raised-button>{{ locale.home.subscribenow }}</button>
     </div>
     <!-- </mat-card> -->
 </div>
+
+
+<!--    [ngStyle]="{ 'font-family': locale == 'ar' ? 'HacenTunisia' : 'BarlowCondensed' }" -->

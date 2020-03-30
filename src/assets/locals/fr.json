@@ -1,0 +1,37 @@
+{
+    "home": {
+        "subscribeenow": "abonnez-vous maintenant",
+        "readmore": "en savoir plus",
+        "carousel": {
+            "slogo": "Apprenez à programmer de la meilleure façon possible",
+            "subslogo": "Apprenez à coder de la meilleure façon possible"
+        }
+    },
+    "ngxauthfirebaseui": {
+        "signInTabText": "Se connecter",
+        "signInCardTitleText": "Connexion",
+        "loginButtonText": "Se connecter",
+        "ForgotPasswordButtonText": "Mot de passe oublié?",
+        "nameText": "Nom",
+        "nameErrorRequiredText": "Le nom est obligatoire",
+        "nameErrorMinLengthText": "Le nom est trop court!",
+        "nameErrorMaxLengthText": "Le nom est trop long!",
+        "emailText": "E-mail",
+        "emailErrorRequiredText": "Un e-mail est requis",
+        "emailErrorPatternText": "Veuillez saisir une adresse e-mail valide",
+        "passwordText": "Mot de passe",
+        "passwordErrorRequiredText": "Un mot de passe est requis",
+        "registerTabText": "S'inscrire",
+        "registerCardTitleText": "Inscription",
+        "registerButtonText": "Inscrire",
+        "guestButtonText": "",
+        "resetPasswordTabText": "Réinitialiser l'adresse e-mail au mot de passe",
+        "resetPasswordInputText": "Réinitialiser l'adresse e-mail au mot de passe",
+        "resetPasswordErrorRequiredText": "Un e-mail est nécessaire pour réinitialiser le mot de passe!",
+        "resetPasswordErrorPatternText": "Veuillez saisir une adresse e-mail valide",
+        "resetPasswordActionButtonText": "Réinitialiser",
+        "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique.",
+        "emailConfirmationTitle": " ------------------- 'Titre de confirmation de l'e-mail' ------------------- ",
+        "emailConfirmationText": " ------------------- 'Texte de confirmation de l'e-mail' ------------------- "
+    }
+}

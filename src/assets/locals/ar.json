@@ -1,0 +1,37 @@
+{
+    "home": {
+        "subscribenow": "سجل الآن",
+        "readmore": "قراءة المزيد",
+        "carousel": {
+            "slogo": "تعلم البرمجة بأفضل طريقة ممكنة",
+            "subslogo": "تعلم البرمجة بأفضل طريقة ممكنة"
+        }
+    },
+    "ngxauthfirebaseui": {
+        "signInTabText": "تسجيل الدخول",
+        "signInCardTitleText": "تسجيل الدخول",
+        "loginButtonText": "سجل الدخول",
+        "forgetPasswordButtonText": "هل نسيت كلمة المرور؟",
+        "nameText": "الإسم",
+        "nameErrorRequiredText": "الاسم مطلوب",
+        "nameErrorMinLengthText": "الاسم قصير جدًا!",
+        "nameErrorMaxLengthText": "الاسم طويل جدًا!",
+        "emailText": "البريد الإلكتروني",
+        "emailErrorRequiredText": "البريد الإلكتروني مطلوب",
+        "emailErrorPatternText": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+        "passwordText": "كلمة المرور",
+        "passwordErrorRequiredText": "كلمة المرور مطلوبة",
+        "registerTabText": "تسجيل",
+        "registerCardTitleText": "تسجيل",
+        "registerButtonText": "تسجيل",
+        "guestButtonText": "",
+        "resetPasswordTabText": "إعادة تعيين عنوان البريد الإلكتروني إلى كلمة المرور",
+        "resetPasswordInputText": "إعادة تعيين عنوان البريد الإلكتروني إلى كلمة المرور",
+        "resetPasswordErrorRequiredText": "البريد الإلكتروني مطلوب لإعادة تعيين كلمة المرور!",
+        "resetPasswordErrorPatternText": "الرجاء إدخال عنوان بريد إلكتروني صالح",
+        "resetPasswordActionButtonText": "إعادة تعيين",
+        "resetPasswordInstructionsText": "مطلوب إعادة التعيين. تحقق من تعليمات البريد الإلكتروني الخاصة بك.",
+        "emailConfirmationTitle": "' ------------------- تأكيد عنوان البريد الإلكتروني ------------------- '",
+        "emailConfirmationText": "' ------------------- نص تأكيد البريد الإلكتروني ------------------- '"
+    }
+}
